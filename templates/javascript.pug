@@ -1,0 +1,127 @@
+extends layout
+
+block main-content
+  h1.page-title Welcome To TechQuest!
+  h2 Learn All about Javascript
+  
+  .swiper.container
+    .card-wrapper
+      h2 Start Here
+      h2 Beginner Javascript Videos
+      ul.card-list.swiper-wrapper
+        if beginnerVideos && beginnerVideos.length
+          each video in beginnerVideos
+            li.swiper-slide.card-item(style="width: 200%")
+              a.card-link(href=video.videoUrl)
+                img.card-image(src=video.thumbnailUrl, alt=video.videoTitle)
+                p.badge.badge-beginner Beginner
+                h2.card-title= video.videoTitle
+                button.card-button.material-symbols-rounded Watch
+        else
+          p No beginner videos found.
+
+    .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+  button#start-quiz-btn-beginner.quiz-button Take A Quiz!
+  // Modal for Beginner Quiz
+  .modal#beginner-quiz-modal(style="display: none")
+    .flex
+      .wrapper
+        .quiz-container
+          .quiz-head
+            h2.quiz-title Beginner Javascript Quiz
+            .quiz-score
+              span#beginner-correct-score 0
+              span / 
+              span#beginner-total-question 10
+          .quiz-body
+            h2.quiz-question#beginner-question
+            div#beginner-quiz-options
+            #result
+          .quiz-foot
+            button#beginner-check-answer Check Answer
+            button#beginner-next-question(style="display: none") Next Question
+            button#beginner-play-again(style="display: none") Try Again
+          button#beginner-close-quiz-btn Close Quiz
+ 
+  .swiper.container
+    .card-wrapper
+      h2 Ready to Learn More? 
+      h2 Intermediate Javascript Videos
+      ul.card-list.swiper-wrapper
+        if intermediateVideos && intermediateVideos.length
+          each video in intermediateVideos
+            li.swiper-slide.card-item#slider(style="width: 40%")
+              a.card-link(href=video.videoUrl)
+                img.card-image(src=video.thumbnailUrl, alt=video.videoTitle)
+                p.badge.badge-intermediate Intermediate
+                h2.card-title= video.videoTitle
+                button.card-button.material-symbols-rounded Watch
+        else
+          p No intermediate videos found.
+
+    .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+  button#start-quiz-btn-intermediate.quiz-button Take A Quiz!
+  .modal#intermediate-quiz-modal(style="display: none")
+    .flex
+      .wrapper
+        .quiz-container
+          .quiz-head
+            h2.quiz-title Intermediate Javascript Quiz
+            .quiz-score
+              span#intermediate-correct-score 0
+              span / 
+              span#intermediate-total-question 10
+          .quiz-body
+            h2.quiz-question#intermediate-question
+            div#intermediate-quiz-options
+            #result
+          .quiz-foot
+            button#intermediate-check-answer Check Answer
+            button#intermediate-next-question(style="display: none") Next Question
+            button#intermediate-play-again(style="display: none") Try Again
+          button#intermediate-close-quiz-btn Close Quiz
+  // Advanced HTML Videos
+  .swiper.container
+    .card-wrapper
+      h2 End Here!
+      h2 Advanced Javascript Videos
+      ul.card-list.swiper-wrapper
+        if advancedVideos && advancedVideos.length
+          each video in advancedVideos
+            li.swiper-slide.card-item#slider(style="width: 40%")
+              a.card-link(href=video.videoUrl)
+                img.card-image(src=video.thumbnailUrl, alt=video.videoTitle)
+                p.badge.badge-advanced Advanced
+                h2.card-title= video.videoTitle
+                button.card-button.material-symbols-rounded Watch
+        else
+          p No advanced videos found.
+
+    .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+  button#start-quiz-btn-advanced.quiz-button Take A Quiz!
+  // Modal for Advanced Quiz
+  .modal#advanced-quiz-modal(style="display: none")
+    .flex
+      .wrapper
+        .quiz-container
+          .quiz-head
+            h2.quiz-title Advanced Javascript Quiz
+            .quiz-score
+              span#advanced-correct-score 0
+              span / 
+              span#advanced-total-question 10
+          .quiz-body
+            h2.quiz-question#advanced-question
+            div#advanced-quiz-options
+            #result
+          .quiz-foot
+            button#advanced-check-answer Check Answer
+            button#advanced-next-question(style="display: none") Next Question
+            button#dvanced-play-again(style="display: none") Try Again
+        button#advanced-close-quiz-btn Close Quiz
