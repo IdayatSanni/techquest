@@ -8,7 +8,9 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8888;
-
+app.get("/", (req, res) => {
+  res.send("Welcome to the Express app!");
+});
 app.set("views", path.join(__dirname, "templates"));
 app.set("view engine", "pug");
 
@@ -16,7 +18,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", htmlRouter);
 app.use("/javascript", javascriptRouter);
-
 
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
