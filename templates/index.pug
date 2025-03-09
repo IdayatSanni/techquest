@@ -8,48 +8,7 @@ block main-content
   h2 Start Your Journey Here
   h2 Learn All about HTML and CSS
   
-  .swiper.container
-    .card-wrapper
-      h2 Start Here
-      h2 Beginner HTML Videos
-      ul.card-list.swiper-wrapper
-        if beginnerVideos && beginnerVideos.length
-          each video in beginnerVideos
-            li.swiper-slide.card-item#slider(style="width: 40%")
-              a.card-link(href=video.videoUrl)
-                img.card-image(src=video.thumbnailUrl, alt=video.videoTitle)
-                p.badge.badge-beginner Beginner
-                h2.card-title= video.videoTitle
-                button.card-button.material-symbols-rounded Watch
-        else
-          p No beginner videos found.
-
-    .swiper-pagination
-    .swiper-button-prev
-    .swiper-button-next
-  button#start-quiz-btn-beginner.quiz-button Take A Quiz!
   
-  .modal#beginner-quiz-modal(style="display: none")
-    .flex
-      .wrapper
-        .quiz-container
-          .quiz-head
-            h2.quiz-title Beginner HTML Quiz
-            .quiz-score
-              span#beginner-correct-score 0
-              span / 
-              span#beginner-total-question 10
-          .quiz-body
-            h2.quiz-question#beginner-question
-            div#beginner-quiz-options
-            #beginner-result
-          .quiz-foot
-            button#beginner-check-answer Check Answer
-            button#beginner-next-question(style="display: none") Next Question
-            button#beginner-play-again(style="display: none") Try Again
-          button#beginner-close-quiz-btn Close Quiz
-          #result-container
-  // Intermediate HTML Videos
   .swiper.container
     .card-wrapper
       h2 Ready to Learn More? 
